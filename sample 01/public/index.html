@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f5f7f6"><title>Website Security Posture Checker</title>
+<link rel="stylesheet" href="/static/styles.css"><script src="/static/app.js" defer></script>
+</head>
+<body>
+<header class="site-header"><a class="brand" href="/" aria-label="Posture Check home"><span class="brand-icon">◈</span><span>posture<span class="brand-light">check</span></span></a><a class="header-link" href="#about">How it works <span aria-hidden="true">↗</span></a></header>
+<main class="shell">
+<section class="hero" aria-labelledby="page-title"><div class="eyebrow"><span class="eyebrow-dot"></span> PASSIVE WEBSITE REVIEW</div><h1 id="page-title">A clearer view of your<br><span>website’s security posture.</span></h1><p class="intro">Review a few public security signals from a website’s homepage. Get useful observations and practical next steps, without crawling or probing the site.</p>
+<div class="consent"><span class="consent-icon" aria-hidden="true">!</span><p><strong>Only check websites you own or have permission to assess.</strong><br>This is an informational review, not a penetration test or a guarantee of security.</p></div>
+<form id="check-form" class="url-form" novalidate><label for="url-input">Website URL</label><div class="input-row"><span class="input-icon" aria-hidden="true">↗</span><input id="url-input" name="url" type="url" inputmode="url" autocomplete="url" placeholder="https://example.com" maxlength="2048" required aria-describedby="input-help error-message"><button id="submit-button" type="submit"><span class="button-text">Run passive check</span><span class="button-arrow" aria-hidden="true">→</span></button></div><div class="field-meta"><span id="input-help">We check the homepage and two explicitly listed public files.</span><span>HTTPS preferred</span></div><p id="error-message" class="error-message" role="alert" hidden></p></form>
+<div id="loading" class="loading" role="status" aria-live="polite" hidden><span class="spinner"></span><span><strong>Reviewing public signals</strong><small id="progress-text">Checking the homepage response…</small></span></div>
+</section>
+<section id="results" class="results" aria-live="polite" hidden></section>
+<section class="scope-grid" id="about"><article class="scope-card"><span class="scope-icon green" aria-hidden="true">⌁</span><div><h2>What we look at</h2><p>HTTPS connection, selected response headers, cookie flags, possible HTTP resources, and the availability of robots.txt and security.txt.</p></div></article><article class="scope-card"><span class="scope-icon amber" aria-hidden="true">⤴</span><div><h2>What we don’t do</h2><p>No crawling, port scanning, vulnerability exploitation, credential checks, or fetching of page assets. Referenced resources are only noted.</p></div></article></section>
+<section class="method-card"><div class="method-heading"><span class="method-symbol">i</span><div><h2>How to read your results</h2><p>Missing signals are prompts for review, not proof of a vulnerability.</p></div></div><div class="method-details"><p>Each applicable check has a simple weight. The summary is the weighted share marked present among checks that completed. Unknown and not-applicable checks do not count as failures. The score is a narrow snapshot, not an overall security rating.</p><a href="#limitations">Read limitations <span aria-hidden="true">↓</span></a></div></section>
+<section id="limitations" class="limitations"><h2>Limitations &amp; acceptable use</h2><p>This checker reviews one homepage response and two known public paths. Results can vary by region, time, browser, and site configuration. It may miss controls implemented elsewhere and cannot validate a complete security program. Use it only for systems you own or are authorized to assess; stop if you are unsure about permission.</p></section>
+<footer><span>Website Security Posture Checker</span><span>Passive observations · No site is labeled “safe” or “secure”</span></footer>
+</main>
+</body></html>
